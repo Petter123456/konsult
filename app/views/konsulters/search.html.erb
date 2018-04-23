@@ -1,0 +1,27 @@
+<h1>Search</h1>
+
+<%= form_tag site_search_path do %>
+  <%= search_field_tag :term %>
+  <%=date_select :startdate, 'Start Datum' %>
+
+  <%= submit_tag "search" %>
+<% end %>
+
+
+<h2>Results</h2>
+
+<% if params[:term] %>
+  <% @result.each do |result| %>
+  <table>
+    <tr>
+    <td><p class="search-results ">Namn: <%= result.name%></p></td>
+    <td><p class="search-results ">Kunskap:<%= result.competence%></p></td>
+    <td><p class="search-results ">Erfarenhet:<%= result.experience%></p></td>
+    <td><p class="search-results ">Tillgänglig Från:<%= result.end_date%></p></td>
+    <td><%= submit_tag 'Boka Konsult'%></td>
+    </tr>
+  </table>
+
+  <% end %>
+
+<% end %>

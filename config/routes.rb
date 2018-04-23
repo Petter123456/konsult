@@ -12,8 +12,8 @@ get '/logout' => 'sessions#destroy'
 get '/signup' => 'users#new'
 post 'signup' => 'users#create'
 
-get '/customer' => 'customers#search'
-post '/customer' => 'customers#search', as: 'site_search'
+get '/customer' => 'konsulters#search'
+post '/customer' => 'konsulters#search', as: 'site_search'
 
 
 end
