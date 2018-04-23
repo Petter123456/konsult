@@ -1,0 +1,28 @@
+<%= form_with(model: konsulter, local: true) do |form| %>
+  <% if konsulter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(konsulter.errors.count, "error") %> prohibited this konsulter from being saved:</h2>
+
+      <ul>
+      <% konsulter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :names %>
+    <%= form.text_field :name, id: :name %>
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :start_date %>
+    <%= form.label :end_date %>
+      <%= form.date_select :end_date, id: :end_date %>
+    <%= form.label :competence %>
+      <%= form.text_field :competence, id: :competence %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Konsulters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @konsulters.each do |konsulter| %>
+      <tr>
+        <td><%= konsulter.name %></td>
+        <td><%= konsulter.start_date %></td>
+        <td><%= konsulter.end_date %></td>
+        <td><%= konsulter.competence %></td>
+        <td><%= link_to 'Show', konsulter %></td>
+        <td><%= link_to 'Edit', edit_konsulter_path(konsulter) %></td>
+        <td><%= link_to 'Destroy', konsulter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Konsulter', new_konsulter_path %>

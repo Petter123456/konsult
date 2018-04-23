@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @konsulter.name %>
+  <%= @konsulter.start_date %>
+  <%= @konsulter.end_date %>
+  <%= @konsulter.competence %>
+
+</p>
+
+<%= link_to 'Edit', edit_konsulter_path(@konsulter) %> |
+<%= link_to 'Back', konsulters_path %>
